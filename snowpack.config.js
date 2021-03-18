@@ -1,10 +1,14 @@
 /** @type {import("snowpack").SnowpackUserConfig } */
 module.exports = {
   mount: {
-    /* ... */
+    public: '/',
+    src: '/dist',
+  },
+  alias: {
+    "~": "./src",
   },
   plugins: [
-    /* ... */
+    '@snowpack/plugin-react-refresh',
   ],
   routes: [
     /* Enable an SPA Fallback in development: */
