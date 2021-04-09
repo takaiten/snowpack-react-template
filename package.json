@@ -2,9 +2,10 @@
     "scripts": {
         "start": "snowpack dev",
         "build": "snowpack build",
-        "lint": "eslint ./",
         "prepare": "husky install",
-        "lint-fix": "eslint ./ --fix",
+        "pre-commit": "lint-staged && pretty-quick --staged",
+        "lint": "eslint ./src/.",
+        "lint:fix": "eslint ./src/. --fix",
         "format": "prettier --write \"**/*.{js,jsx,json,md}\""
     },
     "devDependencies": {
@@ -34,10 +35,5 @@
     },
     "lint-staged": {
         "*.{js,jsx}": "prettier --write"
-    },
-    "husky": {
-        "hooks": {
-            "pre-commit": "lint-staged && pretty-quick --staged"
-        }
     }
 }

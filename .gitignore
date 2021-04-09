@@ -1,4 +1,3 @@
 .snowpack
-.husky/
 build/
 node_modules/
