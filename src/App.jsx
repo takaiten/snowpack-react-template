@@ -4,7 +4,7 @@ const App = () => {
     const [count, setCount] = useState(0);
 
     useEffect(() => {
-        let timer = setTimeout(() => setCount(count + 1), 1000);
+        const timer = setTimeout(() => setCount(count + 1), 1000);
         return () => clearTimeout(timer);
     }, [count, setCount]);
 
