@@ -3,9 +3,9 @@
         "start": "snowpack dev",
         "build": "snowpack build",
         "prepare": "husky install",
-        "pre-commit": "lint-staged && pretty-quick --staged",
-        "lint": "eslint ./src/.",
-        "lint:fix": "eslint ./src/. --fix",
+        "pre-commit": "lint-staged",
+        "lint": "eslint ./src/**/* --ext=jsx,js",
+        "lint:fix": "eslint ./src/**/* --ext=jsx,js --fix",
         "format": "prettier --write \"**/*.{js,jsx,json,md}\""
     },
     "devDependencies": {
@@ -20,8 +20,6 @@
         "eslint-plugin-react": "^7.23.2",
         "husky": "^6.0.0",
         "lint-staged": "^10.5.4",
-        "prettier": "^2.2.1",
-        "pretty-quick": "^3.1.0",
         "snowpack": "^3.2.2"
     },
     "dependencies": {
@@ -34,6 +32,6 @@
         "pnpm": ">=6"
     },
     "lint-staged": {
-        "*.{js,jsx}": "prettier --write"
+        "*.{js,jsx}": "eslint . --fix"
     }
 }
